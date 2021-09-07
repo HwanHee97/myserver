@@ -13,6 +13,7 @@ router.get('/', function(req, res, next) {
     var query_food =  req.query.FOOD ;
     var query_calorie =  req.query.CALORIE ;
     var query_source =  req.query.SOURCE ;
+   
     console.log(query_food+query_calorie+query_source);
     
     //console.log(query);

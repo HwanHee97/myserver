@@ -14,20 +14,19 @@ mysqlConObj.open(db)
 
 //var sql= 'select * from foodcalorie where FOOD like "%?%"';
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-    console.log('select.js'+"/"+req.query);
-    var query = "%" + req.query.FOOD +"%";
-    console.log(query);
+router.get('/', function (req, res, next) {
+  console.log('select.js' + "/" + req.query);
+  var query = "%" + req.query.FOOD + "%";
+  console.log(query);
 
   //  db.query('SELECT * from member where name = ?',[req.query.name], (error, rows, fields) => {
-    db.query('select * from foodcalorie where FOOD like ?',[query], (error, rows, fields) => {
+  db.query('select * from foodcalorie where FOOD like ?', [query], (error, rows, fields) => {
     if (error) throw error;
-    console.log('User info is: '+req.query.name, rows);
-    res.json({"List":rows});
+    console.log('User info is: ' + req.query.FOOD, rows);
+    res.json({ "List": rows });
   });
-    //res.send('테스트 페이지 입니다');
-    
-  });
+  //res.send('테스트 페이지 입니다');
 
-  module.exports = router;
-  
+});
+
+module.exports = router;
