@@ -20,7 +20,7 @@ router.get('/', function (req, res, next) {
   console.log(query);
 
   //  db.query('SELECT * from member where name = ?',[req.query.name], (error, rows, fields) => {
-  db.query('select * from foodcalorie where FOOD like ?', [query], (error, rows, fields) => {
+  db.query('select DISTINCT FOOD,CALORIE, SOURCE from foodcalorie where FOOD like ?', [query], (error, rows, fields) => {
     if (error) throw error;
     console.log('User info is: ' + req.query.FOOD, rows);
     res.json({ "List": rows });

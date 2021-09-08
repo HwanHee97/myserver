@@ -4,13 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
+
 var usersRouter = require('./routes/users');
 var all_listRouter = require('./routes/alllist');
 var select_listRouter = require('./routes/select');
 var insert_listRouter = require('./routes/insert');
 var show_communityRouter = require('./routes/community');
 var insert_communityRouter = require('./routes/community_insert');
+var community_commentRouter = require('./routes/community_comment');
+
 
 
 
@@ -26,7 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+
 
 app.use('/users', usersRouter);
 app.use('/all', all_listRouter);
@@ -34,6 +36,8 @@ app.use('/select', select_listRouter);
 app.use('/insert', insert_listRouter);
 app.use('/community/show', show_communityRouter);
 app.use('/community/insert', insert_communityRouter);
+app.use('/community/comment', community_commentRouter);
+
 
 
 
