@@ -12,6 +12,7 @@ var insert_listRouter = require('./routes/insert');
 var show_communityRouter = require('./routes/community');
 var insert_communityRouter = require('./routes/community_insert');
 var community_commentRouter = require('./routes/community_comment');
+var community_comment_insertRouter = require('./routes/community_comment_insert');
 
 
 
@@ -37,6 +38,7 @@ app.use('/insert', insert_listRouter);
 app.use('/community/show', show_communityRouter);
 app.use('/community/insert', insert_communityRouter);
 app.use('/community/comment', community_commentRouter);
+app.use('/community/commentinsert', community_comment_insertRouter);
 
 
 
