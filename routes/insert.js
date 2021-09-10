@@ -12,13 +12,13 @@ router.get('/', function(req, res, next) {
     console.log('insert.js'+"/"+req.query);
     var query_food =  req.query.FOOD ;
     var query_calorie =  req.query.CALORIE ;
-    var query_source =  req.query.SOURCE ;
    
-    console.log(query_food+query_calorie+query_source);
+   
+    console.log(query_food+query_calorie);
     
     //console.log(query);
-    var sql = 'INSERT INTO foodcalorie (FOOD, CALORIE, SOURCE) VALUES(?, ?, ?)'; 
-    var params = [query_food,query_calorie,query_source]
+    var sql = 'INSERT INTO foodcalorie (FOOD, CALORIE) VALUES(?, ?)'; 
+    var params = [query_food,query_calorie]
 
     db.query(sql,params, (error, rows, fields) => {
     if (error) throw error;
